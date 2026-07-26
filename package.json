@@ -240,7 +240,7 @@
 	},
 	"dependencies": {
 		"@microsoft/tiktokenizer": "^1.0.10",
-		"undici": "^8.7.0"
+		"undici": "^8.9.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
