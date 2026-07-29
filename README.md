@@ -53,10 +53,12 @@ Required actions:
 ### Settings Example
 
 ```json
-"totallyhot.spark.baseUrl": "http://127.0.0.1:5001/v1",
-"totallyhot.spark.modelId": "auto",
-"totallyhot.spark.modelName": "Agentic Router",
-"totallyhot.spark.apiMode": "openai"
+{
+  "totallyhot.spark.baseUrl": "http://127.0.0.1:5001/v1",
+  "totallyhot.spark.modelId": "auto",
+  "totallyhot.spark.modelName": "Agentic Router",
+  "totallyhot.spark.apiMode": "openai"
+}
 ```
 
 ## ✨ Configuration UI
