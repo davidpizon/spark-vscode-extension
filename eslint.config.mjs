@@ -19,6 +19,11 @@ export default tseslint.config(
 	},
 	{
 		files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+		languageOptions: {
+			parserOptions: {
+				warnOnUnsupportedTypeScriptVersion: false,
+			},
+		},
 	},
 	js.configs.recommended,
 	...tseslint.configs.recommended,
