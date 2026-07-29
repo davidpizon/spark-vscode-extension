@@ -119,8 +119,8 @@
 				},
 				"totallyhot.spark.modelId": {
 					"type": "string",
-					"default": "agentic-router",
-					"description": "The single model id sent (as the 'model' field) to the endpoint and shown in the Copilot model picker. Defaults to 'agentic-router' for single-model Agentic Router setups; set it to a configured route name (e.g. 'gpt-5.4') when the router does normal multi-model routing. Leave empty to expose no model. Not editable from the configuration UI."
+					"default": "auto",
+					"description": "The single model id sent (as the 'model' field) to the endpoint and shown in the Copilot model picker. Defaults to 'auto' so the Agentic Router auto-selects the best model; set it to a configured route name (e.g. 'gpt-5.4') when the router does normal multi-model routing. Leave empty to expose no model. Not editable from the configuration UI."
 				},
 				"totallyhot.spark.modelName": {
 					"type": "string",
