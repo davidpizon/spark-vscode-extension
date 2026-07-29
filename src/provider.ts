@@ -112,6 +112,9 @@ export class HuggingFaceChatModelProvider implements LanguageModelChatProvider {
 			};
 			// The id the picker reports is the id we send upstream — no config-id suffixes.
 			const baseId = um.id;
+			// The Agentic Router auto-selects the best model when "model" is "auto";
+			// "agentic-router" is only a picker/display id, not a real upstream model.
+			const requestModelId = baseId === "agentic-router" ? "auto" : baseId;
 
 			const apiMode = um.apiMode ?? "openai";
 			const baseUrl = um.baseUrl || config.get<string>("totallyhot.spark.baseUrl", "");
@@ -177,7 +180,7 @@ export class HuggingFaceChatModelProvider implements LanguageModelChatProvider {
 				const ollamaMessages = ollamaApi.convertMessages(messages, modelConfig);
 
 				let ollamaRequestBody: OllamaRequestBody = {
-					model: baseId,
+					model: requestModelId,
 					messages: ollamaMessages,
 					stream: true,
 				};
@@ -219,7 +222,7 @@ export class HuggingFaceChatModelProvider implements LanguageModelChatProvider {
 
 				// requestBody
 				let requestBody: AnthropicRequestBody = {
-					model: baseId,
+					model: requestModelId,
 					messages: anthropicMessages,
 					stream: true,
 				};
@@ -285,7 +288,7 @@ export class HuggingFaceChatModelProvider implements LanguageModelChatProvider {
 
 				// requestBody
 				let requestBody: Record<string, unknown> = {
-					model: baseId,
+					model: requestModelId,
 					input,
 					stream: true,
 				};
@@ -348,7 +351,7 @@ export class HuggingFaceChatModelProvider implements LanguageModelChatProvider {
 					this._openaiResponsesPreviousResponseIdUnsupportedBaseUrls.add(normalizedBaseUrl);
 
 					let fallbackBody: Record<string, unknown> = {
-						model: baseId,
+						model: requestModelId,
 						input: fullInput,
 						stream: true,
 					};
@@ -436,7 +439,7 @@ export class HuggingFaceChatModelProvider implements LanguageModelChatProvider {
 
 				// requestBody
 				let requestBody: Record<string, unknown> = {
-					model: baseId,
+					model: requestModelId,
 					messages: openaiMessages,
 					stream: true,
 					stream_options: { include_usage: true },
