@@ -54,7 +54,7 @@ Required actions:
 
 ```json
 "totallyhot.spark.baseUrl": "http://127.0.0.1:5001/v1",
-"totallyhot.spark.modelId": "agentic-router",
+"totallyhot.spark.modelId": "auto",
 "totallyhot.spark.modelName": "Agentic Router",
 "totallyhot.spark.apiMode": "openai"
 ```
@@ -98,7 +98,7 @@ The extension is configured entirely through flat `totallyhot.spark.*` settings 
 | Setting | Type | Description |
 |---|---|---|
 | `totallyhot.spark.baseUrl` | string | Base URL of the Agentic Router (or any OpenAI-compatible) endpoint. All requests are sent here. |
-| `totallyhot.spark.modelId` | string | The model id sent (as the `model` field) upstream and shown in the Copilot model picker. Defaults to `agentic-router`. Set to a configured route name (e.g. `gpt-5.4`) for normal multi-model routing; empty exposes no model. Edit via `settings.json` — not shown in the configuration UI. |
+| `totallyhot.spark.modelId` | string | The model id sent (as the `model` field) upstream and shown in the Copilot model picker. Defaults to `auto` so the Agentic Router auto-selects the best model. Set to a configured route name (e.g. `gpt-5.4`) for normal multi-model routing; empty exposes no model. Edit via `settings.json` — not shown in the configuration UI. |
 | `totallyhot.spark.modelName` | string | (Optional) Display name shown in the picker. Defaults to the model id. |
 | `totallyhot.spark.apiMode` | enum | Protocol used to talk to the endpoint (see [API Mode](#-api-mode)). Default `openai`. |
 | `totallyhot.spark.allowInsecureTls` | boolean | Skip TLS certificate verification — only for `localhost`/`127.0.0.1`/`::1` endpoints (e.g. a local dev proxy with a self-signed cert). Never applied to remote hosts. Default `false`. |
